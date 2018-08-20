@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<title>Jquery Ajax</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="row-id" class="row m-4">
+			<div class="col">
+				<input id="imdId" type="input" name="imdbId" placeholder="ID">
+			</div>
+			<div class="col">
+				<input id="title-id" type="input" name="title" placeholder="Title">
+			</div>
+			<div class="col">
+				<input id="year-id" type="input" name="year" placeholder="Year">
+			</div>
+			<div class="col">
+				<button id="searchBtn" class="btn btn-primary" type="button" name="search" data-toggle="modal" data-target="#exampleModal">Search</button>
+			</div>
+			<div class="col">
+				<button id="resetBtnId" type="button" class="btn btn-secondary" name="search">Reset</button>
+			</div>
+		</div> <!-- end of top div -->
+		<div class="row d-flex justify-content-center mt-4">
+			
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Movie</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        <div class="card"> <!-- start of card -->
+					  <img id="title-img" class="card-img-top" src="images/dummyImg.jpeg" alt="Card image cap">
+					  <div class="card-body">
+					    <h5 id="card-id" class="card-title">Title</h5>
+					    <p id="card-id-text" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  </div>
+					  <ul class="list-group list-group-flush">
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Year</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="year">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Duration</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="duration">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Released</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="released">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Genre</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="genre">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Director</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="director">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Actors</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="actors">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<span>Plot</span></br>
+					    		<strong><p id="plot">xyz</p></strong>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Language</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="language">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Country</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="country">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Awards</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="awards">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Ratings</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="ratings">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Metascore</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="metascore">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>ImdbRating</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="imdbrating">xyz</span></strong>
+					    		</div>
+					    	</div>
+
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>ImdbVotes</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="imdbvotes">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Type</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="type">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>DVD</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="dvd">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>BoxOffice</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="boxoffice">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					    <li class="list-group-item">
+					    	<div class="row">
+					    		<div class="col">
+					    			<span>Production</span>
+					    		</div>
+					    		<div class="col d-flex justify-content-end">
+					    			<strong><span id="production">xyz</span></strong>
+					    		</div>
+					    	</div>
+					    </li>
+					  </ul>
+					  <div class="card-body">
+					    <a id="website" href="#" class="card-link">Another link</a>
+					  </div>
+					</div> <!-- End of Card -->
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			      </div>
+   			 	</div>
+  				</div>
+			</div><!-- end of modal -->
+		</div>
+	</div>
+
+
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="index.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

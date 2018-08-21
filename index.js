@@ -38,7 +38,7 @@ let getAllData = (param) => {
 			else{		
 				$("#card-id").text(response.Title);
 				if(response.Poster == "N/A"){
-					$("#title-img").attr('src',"/images/dummyImg.jpeg");
+					$("#title-img").attr('src',"dummyImg.jpeg");
 				}
 				else{
 					$("#title-img").attr('src',response.Poster);

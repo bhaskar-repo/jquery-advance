@@ -37,7 +37,12 @@ let getAllData = (param) => {
 			}
 			else{		
 				$("#card-id").text(response.Title);
-				$("#title-img").attr('src',response.Poster);
+				if(response.Poster == "N/A"){
+					$("#title-img").attr('src',"images/dummyImg.jpeg");
+				}
+				else{
+					$("#title-img").attr('src',response.Poster);
+				}
 				$("#card-id-text").text("Writer :"+response.Writer);
 				$("#year").text(response.Year);
 				$("#duration").text(response.Runtime);

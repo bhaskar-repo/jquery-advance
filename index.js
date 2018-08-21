@@ -27,7 +27,7 @@ let getAllData = (param) => {
 		type : 'GET',
 		dataType : 'json',
 		async : true,
-		url : 'http://www.omdbapi.com/?apikey=f3f44962&'+param,
+		url : 'https://www.omdbapi.com/?apikey=f3f44962&'+param,
 		success : (response) => {	
 			if(response.length == 0){
 				alert("data not found");
